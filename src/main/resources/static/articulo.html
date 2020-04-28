@@ -1,0 +1,151 @@
+﻿<html>
+<head xmlns="http://www.w3.org/1999/html">
+	<title>Artículo</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="MobileOptimized" content="width" />
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+	<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="./styles/articulo.css">
+
+	<script src="js/articulo.js"></script>
+	<script src="js/articuloCliente.js"></script>
+	<script src="js/categorias.js"></script>
+	<script src="js/categoriasCliente.js"></script>
+	<script src="js/recargar.js"></script>
+	<script src="js/recargarCliente.js"></script>
+
+</head>
+
+<body onLoad="articulo.setID();articulo.setInfo('si');articulo.setUser();categorias.setHref();categorias.existUsername();articulo.connectAndSubscribe()">
+	<div>
+		<h1 class="p-3 mb-2 bg-primary text-white">
+			<header>
+				<div>
+					<div class="left">
+						<img src="img/logo2.png">
+					</div>
+						<div class="right">
+							<p class="message">¿No tiene saldo para ofertar? <a id="re" href="recargar.html" style="color:white;"><b>Recargue aquí</b></a></p>
+						</div>
+				</div>
+			</header>
+	    </h1>
+		
+		<div class="myAlert-top alert alert-success" id="notifyOk">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</div>
+		<div class="myAlert-top2 alert alert-danger" id="notifyNoOk">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		</div>
+		<div class="myAlert-top3 alert alert-primary" id="notify">
+		    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			
+		</div>
+		   
+	    <div>
+	   
+	  	    <ul class="breadcrumb">
+				<li class="breadcrumb-item"><a id="c" href="categorias.html" onclick="categorias.estaLog('/categorias.html')"><b>Categorías</b></a></li>
+				<li class="breadcrumb-item"><a id="f" href="favoritos.html" onclick="categorias.estaLog('/favoritos.html')">Mis Favoritos</a></li>
+				<li class="breadcrumb-item"><a id="p" href="publicar1.html" onclick="categorias.estaLog('/publicar1.html')">Publicar</a></li>
+				<li class="breadcrumb-item"><a id="mp" href="publicaciones.html" onclick="categorias.estaLog('/publicaciones.html')">Mis Publicaciones</a></li>
+				<li class="breadcrumb-item"><a id="pec" href="pujasEnCurso.html" onclick="categorias.estaLog('/pujasEnCurso.html')">Pujas en curso</a></li>
+		    </ul>
+		</div>
+	</div>
+		
+	<div>
+		<div class="info">
+			<h5 class="info">Bienvenido: </h5>
+		</div>
+		<div class="valor">
+			<h5 class="valor" id="user"></h5>
+		</div>
+		<div class="info">
+			<h5 class="info">Saldo: </h5>
+		</div>
+		<div class="valor">
+			<h5 class="valor" id="saldo"></h5>
+		</div>
+		<div class="info">
+			<a class="sesion" href="login.html" onclick="categorias.logOut()">Cerrar Sesión</a>
+		</div>
+	</div>
+	<br></br>
+	
+	<h3 id="nombre"></h3>
+
+	
+	<div class="c">
+		<div class="row" style="margin: 2%">
+			<div class="col-lg-6">
+				<div class="imagen" id="myImg"></div>
+				<button style=" position:absolute;left: 20%;" class="otherbutton" id="favoritos" onclick="articulo.addToFavorite()">Añadir a Favoritos</button>
+				<br></br>
+				<h4>Descripcion del articulo:</h4>
+				<p style="width: 100%; height: 10em" <h4 id="descripcion"></h4>
+			</div>
+			
+				
+			<div class="col-lg-15">
+
+				<section>
+
+					<h4 id="fecha_de_subasta"></h4>
+					<h4><span id="clock"></span></h4>
+
+					<h6 id="tiempo">  </h6>
+					<h6> Minutos de subasta</h6>
+
+
+				</section>
+
+				<section>
+					<h4 id="usuario"></h4>
+					<h4 id="oferta"></h4>
+					<h6>Ciudad: </h6>
+					<h6 id="ubicacion"></h6>
+					<br></br>
+					<h6>Marca: </h6>
+					<h6 id="marca"></h6>
+					<br></br>
+					<h6>Estado: </h6>
+					<h6 id="usado"></h6>
+
+				</section>								
+
+				<section>
+
+					<h2>Valor Actual:</h2>
+					<h2 class="valor" id="valor"></h2>
+
+
+					<form id="Ofertar" action="javascript:articulo.addOferta()">
+						<cen2><input class="inputtype" id="puja" type="number" placeholder="¿Cuánto desea ofertar?" /></cen2>
+						<cen2><button style=" position:relative;left: 18%;" class="otherbutton" id="aceptar">Aceptar</button></cen2>
+					</form>
+
+				</section>
+
+
+			</div>
+		</div>
+	</div>	
+		
+		
+	
+	
+	<esq id="categoria"></esq>
+	<esq id="fecha_publicacion"></esq>
+	<esq id="imagen"></esq>
+	
+	
+</body>
+</html>
