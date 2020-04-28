@@ -29,20 +29,6 @@ apiCliente= (function(){
                 } ,
                 async: true
             });
-        },
-		
-		saveUserCache: function(usuario){
-            $.ajax({
-                url: "usuario/saveUserCache" ,
-                type: "POST",
-                data: JSON.stringify(usuario),
-                contentType: "application/json",
-                success: function() {
-                },
-                 error: function(XMLHttpRequest, textStatus, errorThrown) { 
-					app.notify ('notifyNoOk',".myAlert-top2","El nombre de usuario no esta disponible, intente nuevamente");
-                }
-            });
         }
     };
 })();

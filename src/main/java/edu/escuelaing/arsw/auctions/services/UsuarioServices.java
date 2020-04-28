@@ -12,19 +12,6 @@ public interface UsuarioServices {
 	public Usuario getUsuario(String id) throws AuctionNotFoundException;
 	
 	public Usuario addUser(Usuario user) throws AuctionPersistanceException;
-	    
-	public int setSaldo(String id, int saldo) throws AuctionPersistanceException;
 	
-	public void setPuntuacion(int id,int puntos);
-	
-	public void postUsernameCache(Usuario usuario);
-
-	public boolean existUsername(String usuario);
-	
-	public void deleteUsernameCache(String usuario);
-
-	public int getSaldo(String id);
-	
-	public boolean ofertaPermitida(int userName,int ultimaOferta,int cantidadAPujar);
 	    
 }
