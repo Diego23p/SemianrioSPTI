@@ -208,11 +208,19 @@
             <appName>SeminarioApp-dev-uw-web</appName>
             <region>East US 2</region>
             <!-- Java Runtime Stack for App Service on Windows-->
-            <runtime>
-                <os>windows</os>
-                <javaVersion>1.8</javaVersion>
-                <webContainer>tomcat 9.0</webContainer>
-            </runtime>
+            <pricingTier>P1V2</pricingTier>
+			   <runtime>
+				 <os>linux</os>
+				 <javaVersion>jre8</javaVersion>
+				 <webContainer>jre8</webContainer>
+			   </runtime>
+			   <!-- Begin of App Settings  -->
+			   <appSettings>
+				  <property>
+						<name>JAVA_OPTS</name>
+						<value>-Dserver.port=80</value>
+				  </property>
+			   </appSettings>
             <deployment>
                 <resources>
                     <resource>
