@@ -208,7 +208,6 @@
             <appName>SeminarioApp-dev-uw-web</appName>
             <region>East US 2</region>
             <!-- Java Runtime Stack for App Service on Windows-->
-            <pricingTier>P1V2</pricingTier>
 			   <runtime>
 				 <os>linux</os>
 				 <javaVersion>jre8</javaVersion>
