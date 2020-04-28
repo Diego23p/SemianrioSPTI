@@ -211,7 +211,7 @@
 			   <runtime>
 				 <os>windows</os>
 				 <javaVersion>1.8</javaVersion>
-				 <webContainer>Windows</webContainer>
+				 <webContainer>tomcat 9.0</webContainer>
 			   </runtime>
 			   <!-- Begin of App Settings  -->
 			   <appSettings>
