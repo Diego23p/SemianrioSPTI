@@ -210,7 +210,7 @@
             <!-- Java Runtime Stack for App Service on Windows-->
 			   <runtime>
 				 <os>windows</os>
-				 <javaVersion>jre8</javaVersion>
+				 <javaVersion>1.8</javaVersion>
 				 <webContainer>jre8</webContainer>
 			   </runtime>
 			   <!-- Begin of App Settings  -->
