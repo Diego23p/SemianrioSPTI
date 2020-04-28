@@ -209,7 +209,7 @@
             <region>East US 2</region>
             <!-- Java Runtime Stack for App Service on Windows-->
 			   <runtime>
-				 <os>linux</os>
+				 <os>windows</os>
 				 <javaVersion>jre8</javaVersion>
 				 <webContainer>jre8</webContainer>
 			   </runtime>
