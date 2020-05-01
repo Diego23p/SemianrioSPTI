@@ -5,6 +5,9 @@ div {
 p{
 	color: rgb(14, 118, 198);
 }
+p.message{
+	margin-left: 10px;
+}
 button{
 	margin-left: 63px;
 }
@@ -25,4 +28,7 @@ button{
 }
 .alert{
     display: none;
+}
+a {
+	color: #FFFFFF;
 }

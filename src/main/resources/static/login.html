@@ -39,20 +39,15 @@
 	  <div class="login-page">
 		<div class="form">
 		  <img src="img/logo.PNG">
-
-		  <form class="register-form" action='javascript:app.addAcount()' id="signup">
-			<p class="message"><b>Crear una cuenta:</b></p>
-			<input type="text" placeholder="Identificacion" id="id" />
-			<br></br>
-			<input type="password" placeholder="Contraseña" id="contrasena" />
-			<br></br>
-			<input type="password" placeholder="Confirme su contraseña" id="nuevacontrasena" />
-			<br></br>
-			<button>create</button>
-			<br></br><br></br>
+			<br></br>		  
+		  
+		  <form class="login-form">
+			<p class="message"><b>Ingresar con cuenta ECI<b></p>
+			  <button class="btn btn-primary"><a href="/.auth/login/aad?post_login_redirect_url=/categorias.html/categorias.html?user=diego.puerto">Log in</a></button>
 		  </form>
 
-
+			<br></br>
+			<br></br>
 
 		  <form class="login-form" action='javascript:app.checkPassword()'>
 			<p class="message"><b>Ingresar:<b></p>
@@ -60,7 +55,7 @@
 			<br></br>
             <input type="password" placeholder="Password" id="psw" />
 			<br></br>
-			<button>login</button>
+			<button class="btn btn-primary" >login</button>
 		  </form>
 
 		</div>
