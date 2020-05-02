@@ -86,7 +86,7 @@ var categorias =(function(){
 }
 	
 	function existUsername() {
-		alert(getCookie("AppServiceAuthSession"));
+		
 		categoriasCliente.existUsername(document.getElementById("user").innerText,setLogeado);
 		
 	}
